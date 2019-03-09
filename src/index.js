@@ -8,7 +8,6 @@ import DimensionsProvider from './DimensionsProvider';
 import SoundfontProvider from './SoundfontProvider';
 import PianoWithRecording from './PianoWithRecording';
 import ScoreDisplay from './ScoreDisplay';
-import MidiPlayer from './MidiPlayer';
 
 // webkitAudioContext fallback needed to support Safari
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -21,7 +20,7 @@ const noteRange = {
 const keyboardShortcuts = KeyboardShortcuts.create({
   firstNote: noteRange.first,
   lastNote: noteRange.last,
-  keyboardConfig: KeyboardShortcuts.ALL_ROWS,
+  keyboardConfig: KeyboardShortcuts.HOME_ROW,
 });
 
 class App extends React.Component {
@@ -127,10 +126,7 @@ class App extends React.Component {
           <ScoreDisplay/>
 
         </div>
-        
-        <div className="mt-5">
-          <MidiPlayer/>
-        </div>
+
         <p> {" "}  </p>
         <div className="mt-5">
           <SoundfontProvider
