@@ -10,7 +10,7 @@ class ScoreDisplay extends React.Component {
 		global.metronome +
 		global.clef +
 		global.noteStart +
-		global.notes +
+		global.notes + 
 		global.noteEnd;
     return (
      <div>
