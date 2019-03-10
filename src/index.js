@@ -11,7 +11,7 @@ import ScoreDisplay from './ScoreDisplay';
 import MidiPlayer from './MidiPlayer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DropDown from './DropDown.js';
-import Metronome from './Metronome1.js';
+import Slider from './Slider.js';
 
 // webkitAudioContext fallback needed to support Safari
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -147,7 +147,7 @@ class App extends React.Component {
           <button onClick={this.onClickStop}>Stop</button>
           <button onClick={this.onClickClear}>Clear</button>
           <DropDown></DropDown>
-          <Metronome></Metronome>
+          <Slider></Slider>
         </div>
         <div className="mt-5">
           <strong>Recorded notes</strong>
