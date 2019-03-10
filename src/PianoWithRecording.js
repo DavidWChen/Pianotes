@@ -70,7 +70,7 @@ class PianoWithRecording extends React.Component {
           time: Date.now()/1000 - this.state.originTime,
           duration: duration,
         }];
-        this.updateNotes(newEvents);
+        //this.updateNotes(newEvents);
         console.log (newEvents);
     // this.props.setRecording({
     //   events: this.props.recording.events.concat(newEvents),
@@ -86,9 +86,11 @@ class PianoWithRecording extends React.Component {
     //var midiNote = midiOctave % 12;
     var letterKey = "";
 
-    if (noteArray[0].midiNumber == -1) 
-       letterKey = "Z";
-    else if (midiNote == 0) 
+    // if (noteArray[0].midiNumber == -1) 
+    //    letterKey = "Z";
+    // else 
+
+      if (midiNote == 0) 
       letterKey = "C";
     else if (midiNote == 1)
       letterKey = "_D";
@@ -118,11 +120,12 @@ class PianoWithRecording extends React.Component {
      else 
       global.notes = global.notes + letterKey.toLowerCase();
     
-    global.countNotes++;
+    
 
-    if (global.countNotes % 4 == 0) {
-      global.notes = global.notes + "\n";
+    if (global.countNotes!= 0 && global.countNotes % 4 == 0) {
+      global.notes = global.notes + "|" + "\n";
     }
+     global.countNotes++;
 
     console.log (noteArray);
   }
